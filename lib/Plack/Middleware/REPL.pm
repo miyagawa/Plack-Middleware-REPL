@@ -76,6 +76,9 @@ Hit your application, and you'll get a REPL shell on the console:
   $ $self
   $Dancer_Route1 = Dancer::Route=HASH(0x10089d278);
 
+You can also directly call L<Carp::REPL>'s C<repl> function anywhere
+in your application, to start a REPL shell without dying.
+
 See L<Carp::REPL> for more commands in the REPL shell.
 
 =head1 OPTIONS
@@ -94,7 +97,9 @@ Also enables REPL when your app throws warnings.
 
 Because of the way C<< $SIG{__DIE__} >> works in Perl, this middleware
 doesn't work well with web application frameworks that sets its own
-exception handler, such as L<Mojolicious>.
+exception handler, such as L<Mojolicious>. For such cases, you can
+enabel the REPL shell by calling the C<repl> function in your
+application (described above).
 
 =head1 AUTHOR
 
