@@ -47,7 +47,6 @@ REPL (read-eval-print-loop) when your application raises errors.
   # your Dancer app
   use Dancer;
   get '/' => sub {
-      my $self = shift;
       my $n = parms()->{name}; # typo
       return "Hi there $n";
   };
@@ -66,11 +65,10 @@ Hit your application, and you'll get a REPL shell on the console:
     5: use Dancer;
     6:
     7: get '/' => sub {
-    8:     my $self = shift;
-  * 9:     my $n = parms()->{name};
-   10:     return "Hi there $n";
-   11: };
-   12: dance;
+  * 8:     my $n = parms()->{name};
+    9:     return "Hi there $n";
+   10: };
+   11: dance;
   $ request->path
   /
   $ :u
